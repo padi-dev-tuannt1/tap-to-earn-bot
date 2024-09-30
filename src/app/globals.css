@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tap-count-animation {
+  animation-name: tapAnim;
+  animation-duration: 3s;
+  animation-delay: calc(0.1s * [index]);
+  animation-fill-mode: forwards;
+}
+
+/* tap-count-animation {
+  transition: opacity 3s, transform 3s;
+  animation-name: tapAnim;
+} */
+
+@keyframes tapAnim {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-300px);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
