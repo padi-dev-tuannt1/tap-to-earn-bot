@@ -16,7 +16,6 @@ const TapGlobe = () => {
 
     const { multiClickLevel, energyCapacity } = useBoostersStore()
 
-
     const handleTap = (e: any) => {
         const rect = e.target.getBoundingClientRect();
 
